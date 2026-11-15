@@ -10,15 +10,15 @@ export const site = {
     "I design digital products from the first sketch to developer handoff — mobile apps, websites and brand systems for founders and teams.",
   available: true,
 
-  // Contact — replace the placeholders
-  email: "your-email@example.com",
-  whatsapp: "https://wa.me/971000000000", // your number, digits only, with country code
-  linkedin: "https://www.linkedin.com/in/your-profile",
-  behance: "https://www.behance.net/your-profile",
+  // Contact
+  email: "hirwaheritier007@gmail.com",
+  whatsapp: "https://wa.me/971529834744",
+  linkedin: "https://www.linkedin.com/in/hirwa-heritier-149ab82b7",
+  behance: "https://www.behance.net/hirwaheritier/projects",
 
   // Files in the /public folder
   cv: "/cv.pdf",
-  photo: "", // e.g. "/me.jpg" — leave empty to show initials
+  photo: "/me.jpg", // leave empty to hide the portrait
 };
 
 export const experience = [

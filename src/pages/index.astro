@@ -42,6 +42,12 @@ const chars = (word: string) => word.split("");
   </section>
 
   <section id="about" class="about wrap" aria-label="About">
+    {site.photo && (
+      <figure class="portrait">
+        <img src={site.photo} alt={`Portrait of ${site.name}`} loading="lazy" width="1000" height="1313" />
+        <figcaption>Based in {site.location}</figcaption>
+      </figure>
+    )}
     <div class="row">
       <h2 class="section-title">Experience</h2>
       <ul class="list">
@@ -108,6 +114,9 @@ const chars = (word: string) => word.split("");
   .tiles { display: grid; gap: clamp(16px, 2vw, 24px); margin-top: 24px; }
 
   .about { display: grid; gap: 72px; padding-bottom: clamp(80px, 12vw, 160px); }
+  .portrait { margin: 0; display: grid; grid-template-columns: 1fr 2fr; gap: 32px; align-items: end; }
+  .portrait img { grid-column: 2; width: 100%; max-width: 520px; border-radius: 28px; }
+  .portrait figcaption { grid-column: 1; grid-row: 1; font-size: 14px; color: var(--graphite); }
   .row { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; }
   .list { list-style: none; margin: 0; padding: 0; }
   .list li {
@@ -145,6 +154,9 @@ const chars = (word: string) => word.split("");
     .hero-foot { grid-template-columns: 1fr; }
     .hero-side { justify-items: start; }
     .row { grid-template-columns: 1fr; gap: 20px; }
+    .portrait { grid-template-columns: 1fr; gap: 12px; }
+    .portrait img { grid-column: 1; border-radius: 22px; }
+    .portrait figcaption { grid-row: 2; }
     .services { grid-template-columns: 1fr; gap: 24px; }
     .list li { flex-direction: column; gap: 2px; font-size: 17px; }
     .li-note { white-space: normal; }
