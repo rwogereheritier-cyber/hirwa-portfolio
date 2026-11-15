@@ -4,6 +4,7 @@ summary: A walk through years of African history, rebuilt for the web — so a m
 role: Product owner and design lead
 scope: Website, design system, booking, payments
 url: https://www.bisaaberwamuseum.com
+cover: /images/work/bisa-aberwa-museum/cover.jpg
 order: 3
 ---
 

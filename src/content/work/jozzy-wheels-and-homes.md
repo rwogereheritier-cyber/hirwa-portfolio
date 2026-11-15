@@ -1,9 +1,10 @@
 ---
 title: Jozzy Wheels & Homes
-summary: A Dubai concierge for cars and homes. Every request is captured cleanly, tracked, and handed straight to WhatsApp.
+summary: Your Dubai connection. Vehicles, property, sourcing and lifestyle help for clients around the world — every request captured, tracked and handed straight to WhatsApp.
 role: Product owner and design lead
 scope: Website, request system, admin dashboard
 url: https://www.jozzywheelsandhomes.com
+cover: /images/work/jozzy-wheels-and-homes/cover.jpg
 order: 6
 ---
 

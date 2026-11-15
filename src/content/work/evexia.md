@@ -1,9 +1,10 @@
 ---
 title: Evexia
-summary: Natural Ghanaian cosmetics — shea butter and botanicals — given a website as honest as the products.
+summary: Nature's wisdom on your skin. Green cosmetics rooted in Ghanaian heritage — shea, chebe, cocoa and honey — given a website as honest as the products.
 role: UI/UX lead
 scope: Website rebuild, content
 url: https://www.evexialifestyle.com
+cover: /images/work/evexia/cover.jpg
 order: 5
 ---
 
