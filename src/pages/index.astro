@@ -13,7 +13,7 @@ const chars = (word: string) => word.split("");
     <h1 class="name" aria-label={site.name}>
       <span class="line" aria-hidden="true">
         {chars(site.firstName).map((c) => <span class="char" data-hero-char>{c}</span>)}
-      </span>
+      </span>{" "}
       <span class="line" aria-hidden="true">
         {chars(site.lastName).map((c) => <span class="char" data-hero-char>{c}</span>)}
       </span>
