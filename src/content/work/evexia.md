@@ -1,19 +1,20 @@
 ---
 title: Evexia
-summary: Website design and content work for a Ghanaian beauty and wellness brand.
+summary: Natural Ghanaian cosmetics — shea butter and botanicals — given a website as honest as the products.
 role: UI/UX lead
-scope: Website, content
-order: 4
+scope: Website rebuild, content
+url: https://www.evexialifestyle.com
+order: 5
 ---
 
-## The problem
+## The challenge
 
-The brand's website carried placeholder content that didn't reflect the founder, the products or the customers.
+Evexia Nutrition Center makes natural beauty, hair and skincare products in Ghana. Its old website was dated and filled with placeholder copy that didn't describe the founder, the ingredients or the real customers.
 
 ## What I did
 
-I reworked the content and design with the client's real facts so the site speaks accurately for the brand.
+I rebuilt the site into a modern, mobile-friendly shopfront and rewrote it with the client's real story — the founder, what goes into each product and what customers actually say.
 
-## Outcome
+## Where it stands
 
-Write the result here.
+Live at evexialifestyle.com.

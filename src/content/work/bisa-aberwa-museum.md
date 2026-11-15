@@ -1,19 +1,26 @@
 ---
 title: Bisa Aberwa Museum
-summary: A rebuilt website and custom design system for a Pan-African museum in Ghana.
+summary: A walk through years of African history, rebuilt for the web — so a museum in Ghana can welcome visitors, sell its artisans' work and run live auctions online.
 role: Product owner and design lead
-scope: Website, design system, booking
+scope: Website, design system, booking, payments
+url: https://www.bisaaberwamuseum.com
 order: 3
 ---
 
-## The problem
+## The museum
 
-The museum needed a site that does justice to its collection and lets visitors read stories, follow auctions, support the museum and book a visit.
+Bisa Aberwa is a not-for-profit Pan-African museum in Sekondi, Ghana. Its sculptures honour heroes like Yaa Asantewaa, Harriet Tubman and Kwame Nkrumah. The old website didn't do the collection justice, and it couldn't take a booking.
 
 ## What I did
 
-I owned the product and designed "The Vitrine", a custom design system, then took it through to a clean production build with booking, payments and an admin dashboard.
+I took the rebuild from first plan to a clean production release, owning product decisions and design throughout.
 
-## Outcome
+- **The Vitrine** — a custom design system that frames every piece with the quiet of a museum display case.
+- **Visits** — book a visit in a few steps.
+- **Auctions and shop** — live bidding and a shop for the museum artisans' carved totems and stools, with local payments through Paystack.
+- **Learn and support** — lectures, stories and membership.
+- **Admin** — a dashboard so the museum team can run it all themselves.
 
-Write the result here.
+## Where it stands
+
+Live at bisaaberwamuseum.com.

@@ -1,19 +1,27 @@
 ---
 title: Koamol
-summary: A B2B trade app connecting verified African producers with global buyers.
+summary: Move trade, move forward. A new identity and app for a B2B platform connecting verified African producers with buyers around the world.
 role: UI/UX lead
-scope: Mobile app redesign, iOS and Android
+scope: Brand identity, mobile app for iOS and Android
+year: "2026"
+cover: /images/work/koamol/cover.jpg
 order: 2
 ---
 
-## The problem
+## The challenge
 
-Small producers struggle to reach and trust international buyers, and buyers struggle to verify who they're dealing with.
+Koamol connects small African producers with international buyers — a business built on trust. Its old logo was busy, hard to read at small sizes and impossible to use as an app icon.
 
-## What I did
+## From symbol to system
 
-I led the redesign documentation: information architecture for four user types (seller, buyer, third-party partner, admin), escrow payment flows, a full screen inventory and a phased delivery timeline.
+I reduced the identity to one directional mark drawn from the geometry of the K. Two forms moving forward together: movement for the trade, connection between markets and people. It works as a full logo, an app icon and a compact lockup.
 
-## Outcome
+![Koamol's new brand identity](/images/work/koamol/identity.jpg)
 
-Write the result here.
+## The app
+
+I led the redesign plan for the mobile app: information architecture for four kinds of users — sellers, buyers, partners and admins — escrow payments that protect both sides, a full inventory of around 60 screens and a phased delivery roadmap.
+
+## Where it stands
+
+The brand book is complete and app design is in progress.

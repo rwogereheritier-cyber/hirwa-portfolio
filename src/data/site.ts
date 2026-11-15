@@ -7,7 +7,7 @@ export const site = {
   role: "UI/UX lead and product design strategist",
   location: "Dubai, UAE",
   intro:
-    "I design digital products from the first sketch to developer handoff — mobile apps, websites and brand systems for founders and teams.",
+    "I turn tired websites into modern, working products — and design new ones from the first sketch to developer handoff. Apps, websites and brands for teams across Africa and the Gulf.",
   available: true,
 
   // Contact
@@ -22,10 +22,10 @@ export const site = {
 };
 
 export const experience = [
-  { role: "UI/UX lead", org: "Koamol", note: "B2B trade platform" },
-  { role: "Product owner and design lead", org: "IMARA", note: "AI concierge app" },
-  { role: "Product owner and design lead", org: "Bisa Aberwa Museum", note: "Website and design system" },
-  { role: "UI/UX lead", org: "Evexia", note: "Wellness brand website" },
+  { role: "Founder and design lead", org: "IMARA", note: "AI travel agent" },
+  { role: "UI/UX lead", org: "Koamol", note: "Brand and app" },
+  { role: "Product owner and design lead", org: "Bisa Aberwa Museum", note: "Website rebuild" },
+  { role: "Design lead", org: "Orphictek", note: "Website and brand" },
 ];
 
 export const services = [

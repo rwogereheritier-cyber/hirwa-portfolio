@@ -10,6 +10,8 @@ const work = defineCollection({
     role: z.string(),
     scope: z.string(),
     year: z.string().optional(),
+    status: z.string().optional(),
+    url: z.string().url().optional(),
     cover: z.string().optional(), // e.g. "/images/work/koamol/cover.jpg"
     order: z.number(),
   }),

@@ -1,20 +1,34 @@
 ---
 title: IMARA
-summary: An AI concierge that handles a visitor's first 48 hours in Dubai, paired with verified local experts.
-role: Product owner and design lead
-scope: Mobile app, AI agent, design system
+summary: A steady guide in a new city. An AI agent for travel and lifestyle that plans with you, connects you to verified local experts, and never acts without your approval.
+role: Founder, product owner and design lead
+scope: AI agent, mobile app, brand, partner POS
 year: "2026"
+status: In progress
+url: https://heyimara.com
+cover: /images/work/imara/cover.jpg
 order: 1
 ---
 
-## The problem
+## The idea
 
-Arriving in a new city means a sprint of small, urgent tasks — airport transfer, a local SIM, cash, getting around, unwritten local rules. Visitors piece it together from five different apps and a lot of guesswork.
+Landing somewhere new means a dozen small, urgent decisions — getting from the airport, a SIM, cash, getting around, the unwritten rules. Most visitors stitch it together from five apps and a lot of guesswork.
 
-## What I did
+IMARA does the planning with you, then hands the doing to a verified local expert. Nothing is booked or paid until you say yes.
 
-I lead product and design: the concept, user flows, information architecture and the design system. The AI plans; a verified local expert executes; nothing books without the user's approval.
+## The name
 
-## Outcome
+In Swahili, *imara* means strong, firm, stable. In Arabic, *imara* means emirate. One word with two homes — the steady guide between East Africa and the Gulf.
 
-Write the result here — screens shipped, prototype status, what you learned.
+![IMARA lockup on Oasis green and Cream](/images/work/imara/lockup.jpg)
+
+## What I'm designing
+
+- **The agent** — how IMARA plans, asks, confirms and hands off, with approval built into every step.
+- **The app** — a calm, light-first mobile experience for visitors and residents.
+- **The brand** — a loop and a coral dot, Oasis green and Cream, a voice that's warm, brief and honest about what's uncertain.
+- **Partner POS** — tools that let hotels, drivers and local businesses plug in and serve IMARA travellers.
+
+## Where it stands
+
+Brand guidelines are complete. App design is underway in Figma and the first working prototype is in build.
