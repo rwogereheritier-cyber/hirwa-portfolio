@@ -1,0 +1,95 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const work = (await getCollection("work")).sort((a, b) => a.data.order - b.data.order);
+  return work.map((project, i) => ({
+    params: { slug: project.id },
+    props: { project, next: work[(i + 1) % work.length] },
+  }));
+}
+
+const { project, next } = Astro.props;
+const { title, summary, role, scope, year, cover } = project.data;
+const { Content } = await render(project);
+---
+
+<Base title={title} description={summary}>
+  <article class="wrap">
+    <header class="head">
+      <a href="/#work" class="back">All work</a>
+      <h1>{title}</h1>
+      <p class="summary">{summary}</p>
+      <dl class="facts">
+        <div><dt>Role</dt><dd>{role}</dd></div>
+        <div><dt>Scope</dt><dd>{scope}</dd></div>
+        {year && <div><dt>Year</dt><dd>{year}</dd></div>}
+      </dl>
+    </header>
+
+    <div class="cover">
+      {cover
+        ? <img src={cover} alt={`${title} cover`} />
+        : <span class="placeholder" aria-hidden="true">{title}</span>}
+    </div>
+
+    <div class="body">
+      <Content />
+    </div>
+
+    <a href={`/work/${next.id}/`} class="next">
+      <span>Next project</span>
+      <strong>{next.data.title}</strong>
+    </a>
+  </article>
+</Base>
+
+<style>
+  .head { padding-top: clamp(40px, 8vh, 96px); padding-bottom: 48px; }
+  .back { font-size: 15px; color: var(--graphite); }
+  .back:hover { color: var(--black); }
+  h1 {
+    margin-top: 24px;
+    font-size: clamp(56px, 12vw, 168px); font-weight: 600;
+    line-height: 0.9; letter-spacing: -0.06em;
+  }
+  .summary { margin-top: 24px; max-width: 34ch; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.35; }
+  .facts {
+    display: flex; flex-wrap: wrap; gap: 24px 56px;
+    margin: 40px 0 0; padding-top: 24px; border-top: 1px solid var(--line);
+  }
+  dt { font-size: 14px; color: var(--graphite); }
+  dd { margin: 4px 0 0; font-size: 17px; }
+
+  .cover {
+    aspect-ratio: 16 / 9; border-radius: 28px; overflow: hidden; background: var(--mist);
+  }
+  .cover img { width: 100%; height: 100%; object-fit: cover; }
+  .placeholder {
+    display: grid; place-items: center; width: 100%; height: 100%;
+    text-align: center; padding: 0 24px; line-height: 1;
+    font-size: clamp(40px, 9vw, 140px); font-weight: 600; letter-spacing: -0.05em; color: var(--line);
+  }
+
+  .body { max-width: 680px; margin: 0 auto; padding: clamp(56px, 8vw, 112px) 0; }
+  .body :global(h2) { font-size: 28px; font-weight: 600; letter-spacing: -0.03em; margin: 56px 0 14px; }
+  .body :global(h2:first-child) { margin-top: 0; }
+  .body :global(p) { font-size: 19px; line-height: 1.6; color: #1d1d1f; margin: 0 0 18px; }
+  .body :global(img) { border-radius: 18px; margin: 32px 0; width: 100%; }
+
+  .next {
+    display: flex; flex-direction: column; gap: 6px;
+    padding: 48px 0 72px; border-top: 1px solid var(--line);
+  }
+  .next span { font-size: 15px; color: var(--graphite); }
+  .next strong {
+    font-size: clamp(40px, 7vw, 96px); font-weight: 600; letter-spacing: -0.05em; line-height: 1;
+    transition: transform 0.6s var(--ease);
+  }
+  .next:hover strong { transform: translateX(12px); }
+
+  @media (max-width: 760px) {
+    .cover { border-radius: 20px; }
+  }
+</style>

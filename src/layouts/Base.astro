@@ -1,0 +1,96 @@
+---
+import "../styles/global.css";
+import { site } from "../data/site";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = site.intro } = Astro.props;
+const pageTitle = title ? `${title} — ${site.name}` : `${site.name} — ${site.role}`;
+const initials = site.firstName[0] + site.lastName[0];
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      document.documentElement.classList.add("js");
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("motion-ok");
+      }
+    </script>
+  </head>
+  <body>
+    <header class="nav wrap">
+      <a href="/" class="mark" aria-label="Home">{initials}</a>
+      <nav class="links">
+        <a href="/#work">Work</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <a href={site.cv} class="cv" download>CV</a>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="foot wrap">
+      <span>© {year} {site.name}</span>
+      <span class="foot-links">
+        <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+        <a href={site.behance} target="_blank" rel="noopener">Behance</a>
+      </span>
+    </footer>
+
+    <script>
+      import "../scripts/motion";
+    </script>
+  </body>
+</html>
+
+<style>
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .mark {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--black); color: var(--white);
+    display: grid; place-items: center;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+  }
+  .links { display: flex; gap: 28px; font-size: 15px; }
+  .links a, .cv { color: var(--graphite); transition: color 0.2s; }
+  .links a:hover, .cv:hover { color: var(--black); }
+  .cv { font-size: 15px; }
+
+  .foot {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding-top: 28px; padding-bottom: 40px;
+    font-size: 14px; color: var(--graphite);
+    border-top: 1px solid var(--line);
+  }
+  .foot-links { display: flex; gap: 20px; }
+  .foot-links a:hover { color: var(--black); }
+
+  @media (max-width: 560px) {
+    .links { gap: 18px; }
+  }
+</style>

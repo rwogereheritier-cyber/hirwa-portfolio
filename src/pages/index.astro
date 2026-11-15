@@ -1,0 +1,152 @@
+---
+import Base from "../layouts/Base.astro";
+import WorkTile from "../components/WorkTile.astro";
+import { getCollection } from "astro:content";
+import { site, experience, services } from "../data/site";
+
+const work = (await getCollection("work")).sort((a, b) => a.data.order - b.data.order);
+const chars = (word: string) => word.split("");
+---
+
+<Base>
+  <section class="hero wrap" aria-label="Introduction">
+    <h1 class="name" aria-label={site.name}>
+      <span class="line" aria-hidden="true">
+        {chars(site.firstName).map((c) => <span class="char" data-hero-char>{c}</span>)}
+      </span>
+      <span class="line" aria-hidden="true">
+        {chars(site.lastName).map((c) => <span class="char" data-hero-char>{c}</span>)}
+      </span>
+    </h1>
+
+    <div class="hero-foot">
+      <p class="intro" data-hero-fade>{site.intro}</p>
+      <div class="hero-side" data-hero-fade>
+        <p class="meta">
+          {site.available && <span class="dot" aria-hidden="true"></span>}
+          {site.available ? "Available for new projects" : site.location}
+        </p>
+        <div class="actions">
+          <a href="#work" class="btn btn--solid">See my work</a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work wrap" aria-labelledby="work-title">
+    <h2 id="work-title" class="section-title">Selected work</h2>
+    <div class="tiles">
+      {work.map((p) => <WorkTile project={p} />)}
+    </div>
+  </section>
+
+  <section id="about" class="about wrap" aria-label="About">
+    <div class="row">
+      <h2 class="section-title">Experience</h2>
+      <ul class="list">
+        {experience.map((e) => (
+          <li>
+            <span class="li-main">{e.role} at <strong>{e.org}</strong></span>
+            <span class="li-note">{e.note}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="row">
+      <h2 class="section-title">What I do</h2>
+      <ul class="services">
+        {services.map((s) => (
+          <li>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact wrap" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="contact-title">Have a product in mind? Let's talk.</h2>
+    <button class="email" type="button" data-copy={site.email}>
+      <span data-copy-label>{site.email}</span>
+    </button>
+    <div class="actions">
+      <a href={`mailto:${site.email}`} class="btn btn--solid">Email me</a>
+      <a href={site.whatsapp} class="btn btn--ghost" target="_blank" rel="noopener">WhatsApp</a>
+      <a href={site.linkedin} class="btn btn--ghost" target="_blank" rel="noopener">LinkedIn</a>
+      <a href={site.behance} class="btn btn--ghost" target="_blank" rel="noopener">Behance</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-top: clamp(48px, 10vh, 120px); padding-bottom: clamp(72px, 12vh, 140px); }
+
+  .name {
+    font-size: clamp(64px, 17vw, 236px);
+    font-weight: 600;
+    line-height: 0.88;
+    letter-spacing: -0.065em;
+    margin-left: -0.04em;
+  }
+  .line { display: block; overflow: hidden; padding-bottom: 0.06em; }
+  .char { display: inline-block; will-change: transform; }
+
+  .hero-foot {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end; gap: 32px;
+    margin-top: clamp(32px, 6vw, 64px);
+  }
+  .intro { max-width: 30ch; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.35; letter-spacing: -0.01em; }
+  .hero-side { display: grid; gap: 16px; justify-items: end; }
+  .meta { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--graphite); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--black); }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .work { padding-bottom: clamp(80px, 12vw, 160px); }
+  .tiles { display: grid; gap: clamp(16px, 2vw, 24px); margin-top: 24px; }
+
+  .about { display: grid; gap: 72px; padding-bottom: clamp(80px, 12vw, 160px); }
+  .row { display: grid; grid-template-columns: 1fr 2fr; gap: 32px; }
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding: 18px 0; border-bottom: 1px solid var(--line);
+    font-size: 19px;
+  }
+  .list li:first-child { padding-top: 0; }
+  .list strong { font-weight: 600; }
+  .li-note { color: var(--graphite); font-size: 15px; white-space: nowrap; }
+  .services {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 36px 32px;
+  }
+  .services h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .services p { color: var(--graphite); font-size: 15px; max-width: 34ch; }
+
+  .contact {
+    padding-top: clamp(80px, 12vw, 160px); padding-bottom: clamp(80px, 12vw, 140px);
+    border-top: 1px solid var(--line);
+  }
+  .contact-title {
+    font-size: clamp(40px, 7vw, 96px); font-weight: 600;
+    line-height: 0.98; letter-spacing: -0.045em; max-width: 12ch;
+  }
+  .email {
+    margin: 40px 0 28px; padding: 0; border: 0; background: none; cursor: pointer;
+    font: inherit; font-size: clamp(20px, 2.6vw, 30px); letter-spacing: -0.01em;
+    color: var(--graphite); text-decoration: underline; text-underline-offset: 6px;
+    text-decoration-thickness: 1px; transition: color 0.2s;
+  }
+  .email:hover { color: var(--black); }
+
+  @media (max-width: 760px) {
+    .hero-foot { grid-template-columns: 1fr; }
+    .hero-side { justify-items: start; }
+    .row { grid-template-columns: 1fr; gap: 20px; }
+    .services { grid-template-columns: 1fr; gap: 24px; }
+    .list li { flex-direction: column; gap: 2px; font-size: 17px; }
+    .li-note { white-space: normal; }
+  }
+</style>

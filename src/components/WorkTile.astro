@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"work">;
+}
+
+const { project } = Astro.props;
+const { title, summary, scope, cover } = project.data;
+---
+
+<a href={`/work/${project.id}/`} class="tile" data-tile>
+  <div class="text">
+    <h3>{title}</h3>
+    <p class="summary">{summary}</p>
+    <p class="scope">{scope}</p>
+  </div>
+  <div class="media" data-tile-media>
+    {cover
+      ? <img src={cover} alt={`${title} preview`} loading="lazy" />
+      : <span class="placeholder" aria-hidden="true">{title}</span>}
+  </div>
+</a>
+
+<style>
+  .tile {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+    gap: 24px; align-items: stretch;
+    background: var(--mist); border-radius: 28px;
+    padding: clamp(20px, 3vw, 40px);
+    overflow: hidden;
+  }
+  .text { display: flex; flex-direction: column; gap: 10px; padding: 8px 0; }
+  h3 { font-size: clamp(32px, 4vw, 56px); font-weight: 600; letter-spacing: -0.045em; line-height: 1; }
+  .summary { font-size: 17px; max-width: 32ch; }
+  .scope { margin-top: auto; font-size: 14px; color: var(--graphite); }
+
+  .media {
+    aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden;
+    background: var(--white);
+  }
+  .tile h3 { transition: transform 0.6s var(--ease); }
+  .tile:hover h3 { transform: translateX(6px); }
+  .media img { width: 100%; height: 100%; object-fit: cover; }
+  .placeholder {
+    display: grid; place-items: center; width: 100%; height: 100%;
+    text-align: center; padding: 0 24px; line-height: 1;
+    font-size: clamp(28px, 5vw, 72px); font-weight: 600; letter-spacing: -0.05em;
+    color: var(--line);
+  }
+
+  @media (max-width: 760px) {
+    .tile { grid-template-columns: 1fr; border-radius: 22px; }
+    .scope { margin-top: 4px; }
+  }
+</style>
