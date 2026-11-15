@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Page not found">
+  <section class="wrap nf">
+    <h1>404</h1>
+    <p>This page doesn't exist. The work does.</p>
+    <a href="/#work" class="btn btn--solid">See my work</a>
+  </section>
+</Base>
+
+<style>
+  .nf { padding: clamp(80px, 16vh, 180px) var(--gutter); min-height: 60vh; }
+  h1 { font-size: clamp(96px, 22vw, 280px); font-weight: 600; letter-spacing: -0.07em; line-height: 0.85; }
+  p { margin: 24px 0 28px; font-size: clamp(20px, 2.2vw, 26px); }
+</style>

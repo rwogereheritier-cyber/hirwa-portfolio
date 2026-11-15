@@ -11,5 +11,8 @@
   "dependencies": {
     "astro": "^7.4.12",
     "motion": "^14.14.0"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }
