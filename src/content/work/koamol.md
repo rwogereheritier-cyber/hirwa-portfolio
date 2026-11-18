@@ -5,6 +5,9 @@ role: UI/UX lead
 scope: Brand identity, mobile app for iOS and Android
 year: "2026"
 cover: /images/work/koamol/cover.jpg
+challenge: "A busy logo that failed at small sizes."
+solution: "A directional K mark and an app plan for four user types."
+outcome: "Brand book complete; app design in progress."
 order: 2
 ---
 

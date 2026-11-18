@@ -6,13 +6,18 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { title, summary, scope, cover } = project.data;
+const { title, summary, scope, cover, challenge, solution, outcome } = project.data;
 ---
 
 <a href={`/work/${project.id}/`} class="tile" data-tile>
   <div class="text">
     <h3>{title}</h3>
     <p class="summary">{summary}</p>
+    <dl class="case">
+      <div><dt>Challenge</dt><dd>{challenge}</dd></div>
+      <div><dt>What I did</dt><dd>{solution}</dd></div>
+      <div><dt>Result</dt><dd>{outcome}</dd></div>
+    </dl>
     <p class="scope">{scope}</p>
   </div>
   <div class="media" data-tile-media>
@@ -33,7 +38,11 @@ const { title, summary, scope, cover } = project.data;
   .text { display: flex; flex-direction: column; gap: 10px; padding: 8px 0; }
   h3 { font-size: clamp(32px, 4vw, 56px); font-weight: 600; letter-spacing: -0.045em; line-height: 1; }
   .summary { font-size: 17px; max-width: 32ch; }
-  .scope { margin-top: auto; font-size: 14px; color: var(--graphite); }
+  .case { margin: 10px 0 0; display: grid; gap: 10px; }
+  .case div { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+  .case dt { font-size: 13px; color: var(--graphite); }
+  .case dd { margin: 0; font-size: 14px; line-height: 1.45; }
+  .scope { margin-top: auto; padding-top: 16px; font-size: 14px; color: var(--graphite); }
 
   .media {
     aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden;

@@ -5,6 +5,9 @@ role: Product owner and design lead
 scope: Website, design system, booking, payments
 url: https://www.bisaaberwamuseum.com
 cover: /images/work/bisa-aberwa-museum/cover.jpg
+challenge: "A museum site that couldn't take a booking."
+solution: "The Vitrine design system, booking, auctions, shop and admin."
+outcome: "Live at bisaaberwamuseum.com."
 order: 3
 ---
 

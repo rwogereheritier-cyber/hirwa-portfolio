@@ -7,6 +7,9 @@ year: "2026"
 status: In progress
 url: https://heyimara.com
 cover: /images/work/imara/cover.jpg
+challenge: "Visitors juggle five apps just to land in a new city."
+solution: "An approval-first AI agent, mobile app and brand."
+outcome: "Brand guidelines done; prototype in build."
 order: 1
 ---
 

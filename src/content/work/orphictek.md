@@ -5,6 +5,9 @@ role: Design lead
 scope: Website, brand identity, 16-page brand book
 url: https://www.orphictek.com
 cover: /images/work/orphictek/cover.svg
+challenge: "A dated site for a modern tech company."
+solution: "A new website and the ORPHIC54 identity and brand book."
+outcome: "Website live; identity ready to roll out."
 order: 4
 ---
 

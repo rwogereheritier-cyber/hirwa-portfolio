@@ -12,6 +12,9 @@ const work = defineCollection({
     year: z.string().optional(),
     status: z.string().optional(),
     url: z.string().url().optional(),
+    challenge: z.string(),
+    solution: z.string(),
+    outcome: z.string(),
     cover: z.string().optional(), // e.g. "/images/work/koamol/cover.jpg"
     order: z.number(),
   }),

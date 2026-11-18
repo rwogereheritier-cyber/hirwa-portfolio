@@ -5,6 +5,9 @@ role: Product owner and design lead
 scope: Website, request system, admin dashboard
 url: https://www.jozzywheelsandhomes.com
 cover: /images/work/jozzy-wheels-and-homes/cover.jpg
+challenge: "Requests lost in WhatsApp threads."
+solution: "Request forms, reference numbers, alerts and an admin dashboard."
+outcome: "Live at jozzywheelsandhomes.com."
 order: 6
 ---
 

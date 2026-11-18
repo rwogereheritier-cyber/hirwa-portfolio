@@ -5,6 +5,9 @@ role: UI/UX lead
 scope: Website rebuild, content
 url: https://www.evexialifestyle.com
 cover: /images/work/evexia/cover.jpg
+challenge: "Placeholder copy that didn't describe the brand."
+solution: "A modern shopfront rewritten with the real story."
+outcome: "Live at evexialifestyle.com."
 order: 5
 ---
 

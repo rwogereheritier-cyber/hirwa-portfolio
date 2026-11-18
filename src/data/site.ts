@@ -8,6 +8,8 @@ export const site = {
   location: "Dubai, UAE",
   intro:
     "I turn tired websites into modern, working products — and design new ones from the first sketch to developer handoff. Apps, websites and brands for teams across Africa and the Gulf.",
+  bio:
+    "I'm Hirwa, a UI/UX lead based in Dubai. I take products from a rough idea to something people can use — planning the structure, designing the system and working with developers to ship it. Most of my work is for teams in Africa and the Gulf.",
   available: true,
 
   // Contact
